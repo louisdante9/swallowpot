@@ -1,0 +1,29 @@
+{
+  "name": "swallowpot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon --watch ./ --exec babel-node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "bcrypt": "^1.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "1.18.2",
+    "dotenv": "4.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "8.3.0",
+    "mongoose": "4.10.8",
+    "validator": "10.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0"
+  }
+}
