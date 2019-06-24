@@ -79,6 +79,7 @@ const validateInput = {
    * @param {*} next
    * @returns {*} response
    */
+<<<<<<< HEAD
   createParcel(req, res, next) {
     const {
       clientName,
@@ -149,6 +150,17 @@ const validateInput = {
         message: 'Content field must not be empty'
       });
     } else if (typeof (toCity) === 'undefined' || validator.isEmpty(toCity)) {
+=======
+  validateFood(req, res, next) {
+    const {
+      nameOfFood, typeOfFood, availability
+     } = req.body;
+    if (typeof (nameOfFood) === 'undefined' || validator.isEmpty(nameOfFood)) {
+      return res.status(401).json({
+        message: 'Content field must not be empty'
+      });
+    } else if (typeof (typeOfFood) === 'undefined' || validator.isEmpty(typeOfFood)) {
+>>>>>>> added setup for the app
       return res.status(401).json({
         message: 'Content field must not be empty'
       });
