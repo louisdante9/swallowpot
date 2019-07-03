@@ -11,15 +11,11 @@ const router = express.Router();
 // new end points
 router.post('/admin/signup',validateInput.adminInput, Admins.adminSignup);
 router.post('/admin/signin', validateInput.adminInput, Admins.adminSignin);
-<<<<<<< HEAD
-router.post('/admin/order/new',  Foods.create);
-=======
 router.get('/admin/order',  Foods.getAllFood);
 router.get('/admin/order/:id',  Foods.getOneFood);
 router.post('/admin/order/new', validateInput.validateFood, Foods.create);
 router.put('/admin/order/:id', validateInput.validateFood, Foods.update);
 router.delete('/admin/order', Foods.delete);
->>>>>>> added setup for the app
 // router.post('/admin/parcel', jwtVerify.verifyToken, validateInput.createParcel, Admins.createParcel);
 // router.get('/admin/parcel/:id', Admins.getOneParcel);
 // router.post('/admin/parcel/:id',  Admins.updateParcel);
