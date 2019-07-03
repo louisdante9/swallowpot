@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const foodSchema = new mongoose.Schema({
     nameOfFood: { type: String, required: true, unique: true },
     typeOfFood: { type: String, required: true },
-    availability: { type: Boolean, required: true, default: false },
+    availability: { type: Boolean, default: false },
 },
     {
         timestamps: {

@@ -1,4 +1,4 @@
 import Admins from './admin';
-import Orders from './order'
+import Foods from './food'
 
-export { Admins, Orders }
+export { Admins, Foods }
