@@ -1,0 +1,19 @@
+a {
+    text-decoration: none;
+    font-size: 25px;
+    color: brown;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#facebook {
+    background-color: cadetblue;
+    text-transform: capitalize;
+    color: white;
+}
+
+.header {
+    padding-top: 20px;
+}

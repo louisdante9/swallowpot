@@ -27,4 +27,4 @@ const verifyToken = {
     }
   }
 };
-export default jwtVerify
+export default verifyToken

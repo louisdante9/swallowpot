@@ -1,25 +1,32 @@
 import express from 'express';
-import { Admins, Foods } from '../controllers';
+import { Admins, Foods, Users, Orders } from '../controllers';
 import validateInput from '../utils/validations';
-// import jwtVerify from '../utils/jwtVerify';
+import verifyToken from '../utils/veriifyToken';
 const router = express.Router();
 
-// router.get('/', (res) => {
-//   res.render('home.ejs');
-// });
 
-// new end points
+
+/**
+ * user end points
+ */
+router.post('/signup', validateInput.signupInput, Users.userSignup);
+router.post('/signin', validateInput.adminInput, Users.userSignin);
+router.post('/user/order', verifyToken.hasToken, Orders.create);
+router.get('/user/orders', verifyToken.hasToken, Orders.userOrders);
+
+
+
+/**
+ * admin endpoints
+ */
+router.get('/admin/orders', verifyToken.hasToken, Orders.listOrders);
 router.post('/admin/signup',validateInput.adminInput, Admins.adminSignup);
 router.post('/admin/signin', validateInput.adminInput, Admins.adminSignin);
-router.get('/admin/order',  Foods.getAllFood);
-router.get('/admin/order/:id',  Foods.getOneFood);
-router.post('/admin/order/new', validateInput.validateFood, Foods.create);
-router.put('/admin/order/:id', validateInput.validateFood, Foods.update);
-router.delete('/admin/order', Foods.delete);
-// router.post('/admin/parcel', jwtVerify.verifyToken, validateInput.createParcel, Admins.createParcel);
-// router.get('/admin/parcel/:id', Admins.getOneParcel);
-// router.post('/admin/parcel/:id',  Admins.updateParcel);
-// router.get('/admin/parcel', jwtVerify.verifyToken, Admins.getAllParcels);
+router.get('/admin/food',  Foods.getAllFood);
+router.get('/admin/food/:id',  Foods.getOneFood);
+router.post('/admin/food/new', validateInput.validateFood, Foods.create);
+router.put('/admin/food/:id', validateInput.validateFood, Foods.update);
+router.delete('/admin/food', Foods.delete);
 
 
 

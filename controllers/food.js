@@ -64,6 +64,7 @@ class Foods {
       });
     }
   }
+  
    /**
    * get one food
    * @param {any} req user request object

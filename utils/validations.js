@@ -9,15 +9,16 @@ const validateInput = {
    * @returns {*} response
    */
   signupInput(req, res, next) {
-    if (typeof (req.body.userId) === 'undefined') {
+    let phoneNo = parseInt(req.body.phone, 10);
+    if (!req.body.username) {
       return res.status(401).json({
-        message: 'userId field can not be empty'
+        message: 'username field can not be empty'
       });
-    } else if (typeof (req.body.password) === 'undefined') {
+    } else if (!req.body.password) {
       return res.status(401).send({
         message: 'Password field can not be empty'
       });
-    } else if (typeof (req.body.email) === 'undefined') {
+    } else if (!req.body.email) {
       return res.status(401).send({
         message: 'Email field can not be empty'
       });
@@ -25,11 +26,24 @@ const validateInput = {
       return res.status(401).send({
         message: 'Please put in a proper email address'
       });
-    } else if (typeof (req.body.firstname) === 'undefined') {
+    } else if (!req.body.firstname) {
       return res.status(401).send({
         message: 'Firstname field can not be empty'
       });
-    } else {
+    } else if (!req.body.lastname) {
+      return res.status(401).send({
+        message: 'Lastname field can not be empty'
+      });
+    } else if (!phoneNo) {
+      return res.status(401).send({
+        message: 'Phone field can not be empty'
+      });
+    } else if (/^\d{11}$/.test(phoneNo) ) {
+      return res.status(401).send({
+        message: 'phone number has to be 11 digits'
+      });
+    }
+    else {
       return next();
     }
   },
