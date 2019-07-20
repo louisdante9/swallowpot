@@ -7,7 +7,7 @@ dotenv.config();
 
 class Admins {
     /**
-   * signup a new user
+   * signup a new admin user
    * @param {any} req user request object
    * @param {any} res servers response
    * @return {void}
@@ -49,7 +49,7 @@ class Admins {
       }
   }
 /**
-   * signin a new user
+   * signin a new admin user
    * @param {any} req user request object
    * @param {any} res servers response
    * @return { Object } token, message
